@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+:root {
+    --background-color: #2e3440;
+    --header-color: #3b4252;
+    --main-containers-color: #4c566a;
+    --font-family: "Outfit", Segoe UI, sans-serif;
+}
+
+html {
+    font-size: 17px;
+    color: white;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+/* ------------- HEADER ------------- */
+
+header {
+    background-color: var(--header-color);
+    margin-bottom: 35px;
+    font-family: var(--font-family);
+}
+
+#header-section nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#header-section nav h1 {
+    margin: 0px;
+}
+
+#header-section nav ul {
+    padding: 0px;
+    margin: 0px;
+    background-color: var(--header-color);
+}
+
+#header-section #chapter {
+    background-color: var(--header-color);
+}
+
+#header-section nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 20px 10px;
+}
+
+/* ------------- MAIN ------------- */
+
+#main-section {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: var(--font-family);
+}
+
+#main-section div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: var(--main-containers-color);
+    box-shadow: 0px 0px 2px 5px var(--main-containers-color);
+    width: 40%;
+    height: 200px;
+}
+
+/* #main-section div h1 {
+    margin: 10px 0px 20px 10px;
+} */
+
+/* ------------- FOOTER ------------- */
