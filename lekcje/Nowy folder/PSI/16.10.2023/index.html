@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+
+    </div>
+    <section id="container">
+        <ul>
+            <li class="first">first</li>
+            <li class="second">second</li>
+            <li class="third">third</li>
+        </ul>
+        <ol>
+            <li class="first">first</li>
+            <li class="second">second</li>
+            <li class="third">third</li>
+        </ol>
+    </section>
+    <div class="footer">
+
+    </div>
+
+    <script>
+        let section = document.querySelector("#container");
+        let second = document.querySelectorAll(".second");
+        let third = document.querySelectorAll("ol li.third");
+        let ul = document.querySelector("#container ul");
+        let footer = document.querySelector(".footer");
+        const pEl = document.createElement("p")
+        const li = document.createElement("li");
+        let allLi = document.querySelectorAll("ul li");
+        pEl.textContent = "Witaj!";
+        section.insertAdjacentElement("afterbegin", pEl);
+
+        footer.classList.add("main");
+        footer.classList.remove("main");
+        
+        ul.insertAdjacentElement("afterbegin", li);
+        for(let i=1;i<allLi.length;i+=2) {
+            console.log(allLi[i])
+            allLi[i].style.setProperty("background-color", "lightgreen");
+        }
+        footer.remove();
+    </script>
+</body>
+</html>

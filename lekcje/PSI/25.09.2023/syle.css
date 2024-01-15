@@ -1,0 +1,9 @@
+div {
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+}
+
+div:hover {
+    border:20px solid red
+}

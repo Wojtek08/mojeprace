@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+        }
+        .zad3 p {
+            width: fit-content;
+            padding: 10px;
+        }
+        .dupa {
+            color: white;
+            background-color: green;
+            width: fit-content;
+            padding: 10px;
+        }
+        #zad8div {
+            border: 1px solid red;
+            padding: 30px;
+            width: 200px;
+            margin-bottom: 200px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <img src="java.jpg" alt="naukaDżawaSkripta"><br>
+        <input type="number" name="rozmiar" id="rozmiar">
+        <input type="submit" value="Zmień" id="zmien">
+        <p>Wpisz tylko liczbe</p><hr>
+        <div class="zad2">
+            <input type="checkbox" name="zad2">
+            <input type="checkbox" name="zad2">
+            <input type="checkbox" name="zad2">
+            <input type="checkbox" name="zad2">
+            <input type="checkbox" name="zad2"><br>
+            <input type="text" id="pole" disabled>
+            <input type="submit" value="sprawdz">
+        </div><hr>
+        <div class="zad3">
+            <p class="zaw" id="inf">Informatyk</p>
+            <p class="zaw" id="pro">Programista</p>
+            <p class="zaw" id="mech">Mechanik</p>
+            <p class="zaw">Reklama</p>
+        </div>
+        <div id="data" class="info">
+            <p class="napis">ZST</p>
+        </div><hr>
+        <div class="zad7">
+            <p class="napis">Akatit 1</p>
+            <h1 class="napis">Akatit 2</h1>
+            <h2 class="napis">Akapit 3</h2>
+            <p class="napis">Akapit 4</p>
+        </div><hr>
+        <div class="zad8">
+            <select name="lista" id="lista">
+                <option value="wew">Wewnątrz</option>
+                <option value="po">Po</option>
+                <option value="przed">Przed</option>
+            </select>
+            <input type="submit" value="Wykonaj">
+            <div id="zad8div"></div>
+        </div>
+    </main>
+    <script>
+        // ------------------ ZAD 1 ------------------
+
+        function zad1() {      
+            let button = document.getElementById('zmien');
+            button.addEventListener('click', function prostaFunkcja() {
+                let zdj = document.querySelector('img[src="java.jpg"]')
+                let rozmiar = parseInt(document.getElementById('rozmiar').value);
+                zdj.style.setProperty('width', rozmiar+'px');
+            });
+        }
+        zad1();
+
+        // ------------------ ZAD 2 ------------------
+
+        function zad2() {
+            let button2 = document.querySelector("input[value='sprawdz']");
+            button2.addEventListener('click', function sprawdz() {
+                let chbox = document.querySelectorAll('.zad2 input[name="zad2"]');
+                let poleTxt = document.getElementById("pole")
+                let ile = 0;
+                chbox.forEach((el) => {
+                    if(el.checked == true) {
+                        ile++;
+                    }
+                })
+                pole.value = ile;
+            });
+        }
+        zad2();
+
+
+        // ------------------ ZAD 3 ------------------
+
+        function zad3() {
+            var zawody = document.querySelectorAll(".zad3 p");
+            zawody.forEach((el) => {
+                if(!(el.hasAttribute('id'))) {
+                    el.style.setProperty("border", '1px solid red');
+                }
+            })
+        }
+        zad3();
+
+        // ------------------ ZAD 4 ------------------
+
+        function zad4() {
+            let p1 = document.createElement('p');
+            p1.createTextNode("ZST Rzeszów");
+            zawody[1].insertAdjacentElement('afterend', p1);
+        }
+        // zad4();
+        // NIE DZIALA WIEC WYLACZONE WYKONANIE FUNKCJI
+
+        // ------------------ ZAD 5 ------------------
+
+        function zad5() {
+            let body = document.querySelector('body');
+            for(let i = 0;i < 5;i++) {
+                let obiekt = document.createElement('p');
+                body.insertAdjacentElement("afterend", obiekt)
+            }
+        }
+        zad5();
+        
+        // ------------------ ZAD 6 ------------------
+
+        let p = document.querySelector('#data .napis');
+        p.remove();
+
+        // ------------------ ZAD 7 ------------------
+
+        function zad7() {
+            let kolekcja = document.querySelectorAll('.zad7 .napis');
+            kolekcja.forEach((el) => {
+                if(el.toString().includes("HTMLParagraphElement")) {
+                    el.classList.add('dupa')
+                }
+            })
+        }
+        zad7();
+
+        // ------------------ ZAD 8 ------------------
+
+        function zad8() {
+            let wyk = document.querySelector('.zad8 input[type="submit"]');
+            wyk.addEventListener('click', function wykonaj() {
+                let opcje = document.querySelector("select");
+                let elementPe = document.createElement('p');
+                let div = document.getElementById("zad8div");
+
+                elementPe.classList.add('info');
+                elementPe.setAttribute('id', 'ak1')
+                console.log(opcje.value)
+                if (opcje.value == "wew") {
+                    div.appendChild(elementPe);
+                } else if (opcje.value == "po") {
+                    div.insertAdjacentElement('afterend', elementPe);
+                } else if (opcje.value == "przed") {
+                    div.insertAdjacentElement('beforebegin', elementPe);
+                }
+            })
+        }
+        zad8();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 500;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <p>ZST</p>
+    <inpuut type="button" value="check" id="check">
+    <input type="checkbox" name="button1" id="textDec">
+    <input type="checkbox" name="button1" id="fontSize">
+    <input type="checkbox" name="button1" id="fontWeight">
+    <input type="checkbox" name="button1" id="fontStyle">
+
+    <script>
+        let check = document.getElementById("check");
+        let boxes = document.querySelectorAll("input[type='checkbox']");
+        let p = document.querySelector("p");
+
+        function checkFiction() {
+            let style1 = window.getComputedStyle(boxes[0]).getPropertyValue("text-decoration");
+            let style2 = window.getComputedStyle(boxes[1]).getPropertyValue("font-size");
+            let style3 = window.getComputedStyle(boxes[2]).getPropertyValue("font-weight");
+            let style4 = window.getComputedStyle(boxes[3]).getPropertyValue("font-style");
+            
+            let wart = style1.split(" ");
+
+            if(wart[0] == "nope") {
+                boxes[0].checked = true;
+            }
+            if(style2 == "20px") {
+                boxes[1].checkeeeeed = true;
+            }
+
+            console.log(style2);
+        }
+
+        check.addEventListener('click', checkFunction());
+    </script>
+</body>
+</html>

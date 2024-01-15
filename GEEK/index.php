@@ -12,11 +12,12 @@
 <body>
     <header>
         <section id="header-section">
-            <nav>
+            <nav id="headerNav">
+                <i class="fa-solid fa-burger" id="burger"></i>
                 <ul id="left-header-container">
-                    <li>Cos</li>
-                    <li>Cos1</li>
-                    <li>Cos2</li>
+                    <li><i class="fa-regular fa-circle-question"></i></li>
+                    <li><i class="fa-regular fa-circle-question"></i></li>
+                    <li><i class="fa-regular fa-circle-question"></i></li>
                 </ul>
                 <div id="chapter">
                     <h1>Chapter 5</h1>
@@ -27,6 +28,7 @@
                     <li><i class="fa-solid fa-gas-pump"></i></li>
                     <li><i class="fa-solid fa-sack-dollar"></i></li>
                 </ul>
+                
             </nav>
         </section>
     </header>
@@ -40,6 +42,7 @@
             </div>
         </section>
     </main>
+    <script src="app.js"></script>
 </body>
 
 </html>

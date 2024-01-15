@@ -1,0 +1,29 @@
+main {
+    display: grid;
+    /* grid-template-areas: 
+    'zd zd box box'
+    'zd zd box box'
+    'panel panel box box'
+    'panel panel box1 box1'
+    ; */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 10px;
+}
+/* 
+main div {
+    border: 1px solid red;
+    padding: 40px;
+}
+
+main div:nth-of-type(1) {
+    grid-area: panel;
+    padding: 80px;
+}
+
+main div:nth-of-type(2) {
+    grid-area: box1;
+} */
+
+main img {
+    max-width: 100%;
+}

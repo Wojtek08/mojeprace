@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1 id="nag1"></h1>
+        <ul>
+            <li class="napis">Napis
+                <a href=""></a>
+            </li>
+            <li class="napis">Napis
+                <a href=""></a>
+            </li>
+            <li class="napis">Napis
+                <a href=""></a>
+            </li>
+            <li class="napis">Napis
+                <a href=""></a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <div>
+            <h2 class="nag2" id="nag2">Technik programista</h2>
+            <p class="napis"></p>
+            <input type="radio" name="rb" id="" value="Opcja1">
+            <input type="radio" name="rb" id="" value="Opcja2" checked>
+            <input type="radio" name="rb" id="" value="Opcja3">
+            <input type="radio" name="rb" id="" value="Opcja4">
+        </div>
+        <span>2023</span>
+        <p class="info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, iure, excepturi explicabo rerum suscipit laudantium assumenda ea culpa ex hic voluptatem quisquam obcaecati laboriosam, sequi ab. Quae cupiditate excepturi provident.</p>
+    </main>
+    <script>
+        // =======================================================================
+        // [1] Tworzenie referencji - wybór elementów DOM do obsługi przez skrypt
+        // =======================================================================
+
+        // a/  getElementById(): tworzy referencję poprzez identyfikator
+            let ng1 = document.getElementById("nag1");
+            console.log(ng1);
+
+        // b/  getElementsByTagName(): tworzy referencję poprzez węzeł znacznika (zwraca kolekcję typu HTMLCollection)
+            let pEl = document.getElementsByTagName("p");
+            console.log(pEl);
+
+        // c/  getElementByClassName():
+            var obCol1 = document.getElementsByClassName("napis");
+            // console.log(obCol1);
+
+        // Iterowanie po elementach kolekcji:
+            for(let x=0;x<obCol1.length;x++) {
+                if(obCol1[x].nodeName=="LI") {
+                    console.log(obCol1[x].textContent);
+                };
+            };
+            // forEach nie zadziala na kolekcji tpy HTMLCollection
+
+        // d/  getElementsByName():
+            let input = document.getElementsByName("rb");
+            console.log(input);
+
+            input.forEach((input)=> {
+                if(input.checked) {
+                    console.log(input.value);
+                };
+            });
+
+        // e/  querySelector():
+            let qs = document.querySelector("p");
+        // f/  querySelectorAll():
+    </script>
+</body>
+</html>

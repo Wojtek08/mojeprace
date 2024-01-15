@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dupća</title>
+</head>
+<body>
+    <h1 id="hajeden"></h1>
+    <script>
+        // [2] Operatory inkrementacji/dekrementacji
+            let v3 = 7;
+            let v4 = 3+(v3++);
+            // v3++ dodaje po operacji, ++v3 dodaje przed operacja
+            console.log(v3);
+            console.log(v4);
+        // [3] Operatory logiczne
+            // && -> and (logiczne 'i')
+            // || -> or (logiczne 'lub')
+                let v5 = 10;
+                let v6 = 5;
+                let v7 = 'zst';
+                console.log(((v5>=10)&&(v6==8)));
+            // Operator negacji - !
+                console.log(((v5>=10)||(v6<8)));
+        // [4] Allternatywne zapisy operacji przypisania
+            let v8 = 5;
+                // Dodawanie 1
+                v8++; v8=v8+1; v8+=1;
+        //  /==================================================\
+        // |       SYSTEMOWE OKNA DIALOGOWE PRZEGLADARKI        |
+        //  \==================================================/
+        //  3 Typy okien modalne
+        //  a) okno komunikatu typu alert
+            //  alert('ZST');
+        //  b) okno decyzyjne: confirm
+            // let dec = confirm("Czy chcesz?");
+            // console.log(dec);   // Dane typu boolean (true, false)
+        //  c) okno wprowadzenia danych: prompt
+            // let wart = prompt('Podaj liczbę:');
+            // console.log('Typ danych: ' + typeof wart + '. wartość: ' + wart);
+        //  konwersja
+            // wart = parseInt(wart);
+            // console.log('Typ danych: ' + typeof wart + '. wartość: ' + wart);
+        //  Opracuj skrypt obliczajacy cene danego produktu po rabacie.
+        //  Produkt bazowo kosztuje 145.50zł, natomiast wielkość rabatu w postaci
+        //  liczby podaje użytkownik. Wynik (cena produktu po uwzględnieniu rabatu) 
+        //  wyświetl w konsoli systemowej przeglądarki w zaokrągleniu do 2 miejsc po
+        //  przecinku oraz z podaniem walut 'PLN'.
+
+            // const cena1 = 145.50;
+            // let rabat = prompt('Podaj rabat: ');
+            // rabat = (parseInt(rabat)/100);
+            // let nowaCena = cena1*rabat;
+            // console.log('Cena po rabacie: ' + nowaCena.toFixed(2) + 'PLN');
+        
+        //  /======================================================\
+        // |        INSTRUKCJE STERUJĄCE - FUNKCJE WARUNKOWE        |
+        //  \======================================================/
+        
+            //  Rozwiazanie - ver. 2
+        //     const cena1 = 145.50;
+        //     let rabat = prompt('Podaj rabat: ');
+        //     rabat = (parseInt(rabat)/100)
+        //         if (((rabat>=0)&&(rabat<=100))&&(!isNaN(rabat))) {
+        //             let nowaCena = cena1-(cena1*rabat);
+        //             const hajeden = document.getElementById('hajeden');
+        //             wyn = ('Cena po rabacie: ' + nowaCena.toFixed(2) + 'PLN');
+        //             hajeden.textContent=wyn;
+        //         } else if (rabat>100) {
+        //             console.log('Powyzej zakresu');
+        //         } else if (rabat<0) {
+        //             console.log('Ponizej zakresu');
+        //         } else if (isNaN(rabat)) {
+        //             console.log("nie liczba");
+        //         };
+            
+        // // [2] Instrukcja switch ... case
+        //     let a = 3;
+        //     switch(a) {
+        //         case 1: {
+        //             // działanie
+        //             break;
+        //         }
+        //         case 2: {
+        //             // działanie
+        //             break;
+        //         }
+        //         case 3: {
+        //             // działanie
+        //             break;
+        //         }
+        //         default: {
+        //             // działani
+        //             break
+        //         };
+        //     };
+
+            //  Skrypt pyta użytkownika o podanie klasy ucznia (I,II,III,IV,V).
+            //  Jeżeli klasa ucznia podana jest jako III lub jako V - skrypt generuje
+            //  komunikat 'W tym roku czeka Cię egzamin';
+            //  W przeciwnym wypadku (da klas I,II, i IV) - komunikat 'Brak egzaminu';
+
+            let klasa = prompt('Podaj klase (I,II,III,IV,V): ');
+            switch(true) {
+                case (klasa == 'I'): {
+                    console.log('Brak egzaminu');
+                    break;
+                };
+                case (klasa == 'II'): {
+                    console.log('Brak egzaminu');
+                    break;
+                };
+                case (klasa == 'III'): {
+                    console.log('W tym roku czeka Cię egzamin');
+                    break;
+                };
+                case (klasa == 'IV'): {
+                    console.log('Brak egzaminu');
+                    break;
+                };
+                case (klasa == 'V'): {
+                    console.log('W tym roku czeka Cię egzamin');
+                    break;
+                };
+                default: {
+                    console.log('Niepoprawne dane')
+                    break;
+                };
+            };
+            // if ((klasa == 'III')||(klasa == 'V')) {
+            //     console.log('W tym roku czeka Cię egzamin')
+            // } else
+    </script>
+</body>
+</html>

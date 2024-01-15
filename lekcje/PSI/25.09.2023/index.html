@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ==================================================
+        //          INSTRUKCJE STERUJACE - ITERACJE
+        // ==================================================
+        // FOR, forEach, WHILE, DO...WHILE
+            // for
+            // let tab1 = [2,1,3,6,7,8,10,11,12];
+            // break - bezwarunkowe zakonczenie
+            // continue - przerwanie (tylko) aktualnie wykonywanego cyklu iteracji 
+            /*for(let x=0;x<tab1.length;x++) {
+                if (tab1[x] === 8) {
+                    console.log(tab1[x]);
+                    break;
+                };
+            };*/
+            /*for(let x=0;x<tab1.length;x++) {
+                if(tab1[x]%2!=0) {
+                    console.log("SRAAAKAAAA"+x);
+                }
+            }*/
+            /*let napis = "guuwno";
+            for(let z=0;z<napis.length;z++) {
+                console.log(napis[z]);
+            };
+            tabZn = napis.split("");
+            console.log(tabZn);
+            tabZn.forEach((el)=>{
+                console.log(el);
+            });*/
+
+            /*  uzytkownik podaje wartosc temperatury orraz jej jednostke ('C' badz 'F').
+                skryptjavascript powinien sprawdzac, czy:
+                - uzytkownik podal jakakolwiek wartosc;
+                - wartosc temperatury jest liczba
+                - czy jednostka temperatury jest podana poprawnie (wynosi 'C' lub 'F').
+                skrypt powinien dokonac konwersji podanej temperatury stosujac nastepujace wzory:
+                    a/ C->F: (˚C * 9/5) + 32 = ˚F
+                    b/ F->C: (˚F - 32) * 5/9 = ˚C 
+                wynik wyswietlamy w konsoli systemowej! stosujemy instrukcje switch ... case
+                do obliczania danego wyniku. informujemy uzytkowanika dokladnie o bledzie 
+                jezeli taki popelnil
+            */
+            
+            /* let temp = prompt("Podaj temperature: ");
+            let jedn = prompt("Podaj jednostke [C/K/F]: ");
+            if((temp.length>0)&&(jedn.length>0)){
+                temp = parseInt(temp);
+                if(!isNaN(temp)) {
+                    switch(jedn) {
+                        case "C": {
+                            let wyn = (temp*(9/5)+32);
+                            console.log(wyn.toFixed(2) + "˚F")
+                            break;
+                        };
+                        case "F": {
+                            let wyn = ((temp-32)*(5/9));
+                            console.log(wyn.toFixed(2) + "˚C");
+                            break;
+                        };
+                        default: {
+                            console.log("zła jednostka");
+                            break;
+                        };
+                    };
+                } else {
+                    console.log("Temperatura nie jest liczbą");
+                };
+            } else {
+                console.log("Nie podałeś danych");
+            }; */
+
+            /* obliczanie wskaznika bmi jest bardzo proste. 
+            aby moc to zrobic, potrzene sa dwie dane:
+            wzrost i aktualna masa ciala. nastepnie nalezy podzielic
+            wage wyrazona w kilogramach przez wzrost podniesiony
+            do kwadratu, wyrazony w metrach czyli w skroci
+            bmi = kg / m^2, czyli w skrocie bmi = kg / m^2.
+            - nedowaga - bmi ponizej 18,5
+            - pozadana masa ciala - bmi od 18,5 do 24,9
+            - nadwaga bmi od 25 do 29,9
+            - otylosc - bmi powyzej 30
+            */
+
+            // let wzrost = prompt("Podaj swój wzrost w metrach: ");
+            // let masa = prompt("Podaj masę ciała: ");
+
+            // if((wzrost.length > 0) && (masa.length > 0)) {
+            //     if(!isNaN(wzrost)) {
+            //         switch(wzrost)
+            //     };
+            // };
+
+            
+            
+            
+    </script>
+</body>
+</html>

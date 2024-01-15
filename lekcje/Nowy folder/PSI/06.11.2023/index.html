@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            width: 100px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="radio" id="afterbegin" name="radio"/>
+    <input type="radio" id="afterend" name="radio"/>
+    <input type="radio" id="beforeend" name="radio"/>
+    <input type="radio" id="beforebegin" name="radio"/>
+    <input type="button" value="create">
+    <script>
+        let body = document.querySelector("body");
+        let radio = document.querySelectorAll("input[type='radio']");
+        let createBtn = document.querySelector("input[type='button']");
+        console.log(radio);
+
+        function create() {
+            // let val;
+
+            let newEl = document.createElement("p");
+            newEl.style.setProperty("border", "3px solid black")
+
+            // switch(true) {
+            //     case (radio[0].checked == true):
+            //         // val = "afterbegin";
+                    //    body.insertAdjacentElement("afterbegin", newEl);
+            //         break;
+            //     case (radio[1].checked == true):
+            //         // val = "afterend";
+            //         body.insertAdjacentElement("afterend", newEl);
+            //         break;
+            //     case (radio[2].checked == true):
+            //         // val = "beforeend";
+            //         body.insertAdjacentElement("beforeend", newEl);
+            //         break;
+            //     case (radio[3].checked == true):
+            //         // val = "beforebegin";
+            //         body.insertAdjacentElement("beforebegin", newEl);
+            //         break;
+            // } 
+
+            if(radio[0].checked == true) {
+                body.insertAdjacentElement("afterbegin", newEl);
+            } else if (radio[1].checked == true) {
+                body.insertAdjacentElement("afterend", newEl);
+            } else if (radio[2].checked == true) {
+                body.insertAdjacentElement("beforeend", newEl);
+            } else if (radio[3].checked == true) {
+                body.insertAdjacentElement("beforebegin", newEl);
+            }
+        }
+
+        // function guwno() {
+        //     let pe = document.createElement("p");
+        //     pe.style.setProperty("background-color","blue");
+        //     pe.style.setProperty("border","3px solid black");
+        //     body.insertAdjacentElement("beforeend", pe);
+        // }
+
+        createBtn.addEventListener('click', create());
+        // guwno();
+
+    </script>
+</body>
+</html>

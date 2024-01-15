@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <input type="text" id="imie">
+            <label for="imie">Imie</label><br>
+        <input type="text" id="nazwisko">
+            <label for="nazwisko">Nazwisko</label><br>
+        <input type="number" id="number1">
+            <label for="number1">Wynik punktowy pisemnej części "INF.03"</label><br>
+        <input type="number" id="number2">
+            <label for="number2">Wynik punktowy pisemnej części "INF.04"</label><br>
+        <input type="checkbox" name="chck" id="1">
+            <label for="1">Wnioskuj o egzamin poprawkowy INF.03</label><br>
+        <input type="checkbox" name="chck" id="2">
+            <label for="2">Wnioskuj o egzamin poprawkowy INF.04</label><br>
+        <input type="button" value="Analizuj" id="analizuj">
+        <input type="button" value="Automatycznie prześlij" id="autoprzeslij" disabled>
+    </form>
+    <script>
+        let analizuj = document.getElementById("analizuj");
+        let auto = document.getElementById("autoprzeslij")
+        let n1 = document.getElementById("number1");
+        let n2 = document.getElementById("number2");
+        let g1 = document.getElementById("1");
+        let g2 = document.getElementById("2");
+
+        analizuj.addEventListener('click', function sprawdz() {
+            let imie = document.getElementById("imie");
+            let nazw = document.getElementById("nazwisko");
+            let validate = true;
+
+            if (imie.value.length < 3) {
+                imie.style.setProperty("border","2px solid red");
+                validate = false;
+            } else {
+                imie.style.setProperty("border","2px solid greenyellow");
+            }
+
+            if (nazw.value.length < 3) {
+                nazw.style.setProperty("border","2px solid red");
+                validate = false;
+            } else {
+                nazw.style.setProperty("border","2px solid greenyellow");
+            }
+
+            if (isNaN(parseInt(n1.value))) {
+                n1.style.setProperty("border","2px solid red");
+                validate = false;
+            } else {
+                n1.style.setProperty("border","2px solid greenyellow");
+            }
+
+            if (isNaN(parseInt(n2.value))) {
+                n2.style.setProperty("border","2px solid red");
+                validate = false;
+            } else {
+                n2.style.setProperty("border","2px solid greenyellow");
+            }
+
+            // AUTOM PRZESLIJ
+
+            if (validate == false) {
+                auto.setAttribute("disabled","true");
+            } else {
+                auto.removeAttribute("disabled");
+            }
+        })
+
+        analizuj.addEventListener('click', function wniosek() {
+            if (n1.value < 20) {
+                document.getElementById("1").checked=true;
+                console.log("dupcia");
+            } else {
+                document.getElementById("1").checked=false;
+                console.log("dupcia");
+            }
+            if (n2.value < 20) {
+                document.getElementById("2").checked=true;
+                console.log("dupcia");
+            } else {
+                document.getElementById("2").checked=false;
+                console.log("dupcia");
+            }
+        })
+    </script>
+</body>
+</html>

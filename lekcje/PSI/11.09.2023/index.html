@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dupa</title>
+</head>
+<body>
+    <script>
+        // sprawdzanie typu zmiennej: dyrektywa typeof
+        let a=5;
+        console.log(typeof a);
+        let c=null;
+        console.log(typeof c);
+        let b="śrąką";
+        console.log(typeof b);
+        let x=true;
+        console.log(typeof x)
+        let e;
+        console.log(typeof e);
+        let uczen={imie:"Maciej", nazwisk:"Pała", klasa:"2d"};
+        console.log(typeof uczen);
+        // String do number
+            // a:
+            let liczba = "34";
+                console.log("Typ danych: " + typeof liczba + ", wartość zmiennej: " + liczba);
+            liczba = parseInt(liczba); // bez liczby dziesietnej
+                console.log("Typ danych: " + typeof liczba + ", wartość zmiennej: " + liczba);
+            // b:
+            let liczba2="45.78";
+                console.log("Typ danych: " + typeof liczba2 + ", wartość zmiennej: " + liczba2);
+            liczba2=parseFloat(liczba2); // do typu number z liczba dzisietna
+                console.log("Typ danych: " + typeof liczba2 + ", wartość zmiennej: " + liczba2);
+            // c:
+        // Number do string
+            let liczba3=354;
+                console.log("Typ danych: " + typeof liczba3 + ", wartość zmiennej: " + liczba3);
+            liczba3=liczba3.toString();
+                console.log("Typ danych: " + typeof liczba3 + ", wartość zmiennej: " + liczba3);
+        
+        let v1="zst55@";
+        v1=parseInt(v1);
+        console.log("Typ danych: " + typeof v1 + ", wartość zmiennej: " + v1)
+        // NaN - Not a Number - wartość zmiennej nie jest liczbą!
+
+        let w1=9.987;
+        let w2=5.1241;
+        console.log(w1/w2);
+        console.log((w1/w2).toFixed(2));
+        
+        // toFixed konwertuje typ number do string oraz prezentuje
+        // czesc znakow po separatorze dziesietnym okreslona
+        // w parametrze - w naszym przykladzie jest to 2:
+
+        // =================================================================
+        // PODSUMOWANIE:
+            // Sprawdzenie czy zmienna jest tablica/kolekcja
+                let tab1=[1,2,3,4,5,6,7,8,9];
+                    console.log(tab1);
+                    console.log(Array.isArray(tab1));
+            // w JS tablice moga zawierac zbiory roznych typow zmiennych - jest to zupelnie poprawne :)
+                let tab2=[null, 2, "zst", true, null, NaN];
+            //obsluga stalych w JS
+                const pi=3.14;
+    </script>
+</body>
+</html>

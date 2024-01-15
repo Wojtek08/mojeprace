@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprawdzian</title>
+    <style>
+        html {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h1::after {
+            display: block;
+            content: "";
+            height: 2px;
+            background-color: red;
+            transform: scaleX(0.1);
+            margin-top: 15px;
+        }
+
+        form div {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+
+        #emailContainer {
+            position: relative;
+        }
+
+        #passwordContainer {
+            margin-top: 35px;
+        }
+
+        #zgodaContainer {
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+        }
+
+        input {
+            width: 350px;
+            height: 20px;
+            margin-left: 10px;
+            padding: 5px;
+            border-radius: 10px;
+            border: 1px solid grey;
+        }
+
+        #submit {
+            width: 100px;
+            height: 35px;
+            margin: 15px auto;
+            background-color: rgb(0, 182, 0);
+            border: 0px;
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            transition: 0.2s ease background-color;
+        }
+
+        #submit:hover {
+            background-color: rgb(39, 255, 39);
+        }
+
+        #zgoda {
+            width: fit-content;
+            margin-top: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        label#caption {
+            font-size: 14px;
+            font-weight: lighter;
+            color: rgba(150, 150, 150, 0.9);
+            position: absolute;
+            left: 135px;
+            top: 35px
+        }
+
+        label#zgoda {
+            font-weight: normal;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#">
+        <h1>Formularz kontaktowy</h1>
+        <div id="im_nzContainer">
+            <input type="text" placeholder="Imie i Nazwisko" id="imie_nazwisko">
+            <label for="imie_nazwisko">Imie i Nazwisko:</label>
+        </div>
+        <div id="emailContainer">
+            <input type="email" placeholder="E-mail" id="email">
+            <label for="email">E-mail:</label>
+            <label for="email" id="caption">Przykład: nazwa@skrzynkapocztowa.pl</label>
+        </div>
+        <div id="passwordContainer">
+            <input type="text" placeholder="Hasło" id="haslo">
+            <label for="haslo">Hasło:</label>
+        </div>
+        <div id="zgodaContainer">
+            <input type="radio" name="zgoda" id="zgoda">
+            <label for="zgoda" id="zgoda">Zgoda na przetwarzanie danych osobowych</label>
+        </div>
+        <input type="submit" id="submit" value="Prześlij">
+    </form>
+
+    <script>
+        let im_nz = document.getElementById("imie_nazwisko");
+        let email = document.getElementById("email");
+        let pass = document.getElementById("haslo");
+        let submit = document.getElementById("submit");
+        let frm = document.querySelector("form")
+
+        function error(ob, ERRmsg) {
+            let ERRobject = document.createElement('p');
+            let ERRObMsg = document.createTextNode(ERRmsg);
+            ERRobject.appendChild(ERRObMsg);
+            ERRobject.classList.add("error");
+            ERRobject.style.setProperty("color", "1px solid red");
+            ob.insertAdjacentElement("afterend", ERRobject);
+        }
+
+        function imie_nazwisko() {
+            let im_nzCont = document.getElementById("im_nzContainer");
+            if (im_nz.value.length < 2 || im_nz.length > 20) {
+                error(im_nzCont, "Za krótkie lub za dlugie")
+                return false;
+            }
+            // } else if (im_nz.value.charCodeAt())
+        }
+
+        function funkcja() {
+            event.preventDefault()
+            if (imie_nazwisko() == true) {
+                frm.submit();
+            }
+        }
+
+        submit.addEventListener("click", funkcja)
+    </script>
+</body>
+
+</html>

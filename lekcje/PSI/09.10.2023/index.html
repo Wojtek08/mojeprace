@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p class="dupa">guwno</p>
+    <script>
+        // ======================== ZADANIE 1 ======================== 
+        let towA = prompt("Podaj liczbe towaru 1 : ");
+        let towB = prompt("Podaj liczbe towaru 2 : ");
+
+        switch(true) {
+            case towA<10:
+                alert("Cena za towar A: "+"10pln");
+                break;
+            case 10<=towA<49:
+                alert("Cena za towar A: "+"9pln");
+                break;
+            case towA>=50:
+                alert("Cena za towar A: "+"6pln");
+                break;
+        }
+        switch(true) {
+            case towB<5:
+                alert("Cena za towar B: "+"15pln");
+                break;
+            case towB>=5:
+                alert("Cena za towar B: "+"12pln");
+                break;
+        }
+        // ======================== ZADANIE 2 ======================== 
+
+        let pensja = prompt("Podaj Twoja roczna pensje : ");
+
+        if (pensja < 37024) {
+            poPodatku = (((1-0.19)*pensja)-493.32);
+        } else if (pensja >= 37024 && pensja <= 74048) {
+            poPodatku = (6541.24 + 0.3*(pensja-37024));
+        } else if (pensja > 74048) {
+            poPodatku = (17648.44 + 0.4*(pensja-74048));
+        }
+        alert("Podatek: "+poPodatku.toFixed(2)+"zł");
+
+        // ======================== ZADANIE 3 ========================
+
+        let pin = [];
+
+        for(let x = 0;x<4;x++) {
+            let e = 0;
+            e = prompt("Podaj "+(x+1)+" cyfre pinu");
+            pin.push(parseInt(e));
+        }
+        if (pin.length == 4) {
+            parseInt(pin);
+            if ((pin[0]+pin[3])%2 == 0) {
+                if ((pin[1]+pin[2])%2 != 0) {
+                    alert("Poprawny")
+                } else {
+                    alert("Niepoprawny");
+                }
+            } else {
+                alert("Niepoprawny");
+            }
+        } else {
+            alert("Niepoprawny");
+        }
+        console.log(pin)
+    </script>    
+</body>
+</html>

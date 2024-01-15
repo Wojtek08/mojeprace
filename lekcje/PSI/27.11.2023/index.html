@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    // Tablice w jezyku JavaScript = deklarowanie i sprawdzanie typu
+        let tab = [5,4,3,2,6,10];
+        console.log(Array.isArray(tab));
+    // Podstawowe metody do obslugi tablic
+        // length - zwraca ilosc elementow tablicy
+        // push() - dodaje leementy na koniec tablicy
+            console.log(tab);
+            tab.push(1519);
+            console.log(tab);
+        // unshift() - dodaje elementy na poczatku tablicy
+            tab.unshift(10);
+            console.log(tab);
+        // pop() - kasuje ostatni element tablicy
+            tab.pop();
+            console.log(tab);
+        // shift() - kasuje pierwszy element tablicy
+            tab.shift();
+            console.log(tab);
+
+
+    // Dodatkowe funkcje obslugi tablic
+        // includes() - zwraca informacje (true/false) czy tablica zawiera szukany element
+            console.log(tab.includes(3));
+        // indexOf() - zwraca pierwszy index (pozycje) szukanego elementu w tablicy
+            console.log(tab.indexOf(6));
+        // lastIndexOf() - zwraca ostatni index (pozycje) szukanego elementu w tablicy
+            console.log(tab.lastIndexOf(6));
+    </script>
+</body>
+</html>

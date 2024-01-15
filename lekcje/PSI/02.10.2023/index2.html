@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <input type="text">
+        <input type="button" id="g1" value="Szukaj">
+    </header>
+    <main>
+        <ul>
+            <li class="napis">Elektronik</li>
+            <li class="napis">Mechanik</li>
+            <li class="napis">Programista</li>
+            <li class="napis">Reklama</li>
+            <li class="napis">Informatyk</li>
+        </ul>
+    </main>
+    <script>
+        const sf = document.querySelector("input[type='text']");
+        const g1 = document.getElementById("g1");
+        
+        function search() {
+            let kier = document.querySelectorAll("li.napis");
+            let txt = sf.value;
+            kier.forEach((el)=>{
+                el.style.removeProperty("color")
+                if(el.textContent === txt) {
+                    el.style.setProperty("color", "red");
+                }
+            })
+            // for(let x=0;x<kier.length;x++) {
+
+            // }
+        }
+
+        g1.addEventListener('click', search);
+    </script>
+</body>
+</html>

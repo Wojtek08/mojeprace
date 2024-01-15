@@ -1,0 +1,12 @@
+div {
+    border: 1px solid black;
+    width: fit-content;
+    padding: 20px;
+    display: inline-block;
+    margin: 0px;
+    margin: 1px;
+    background-color: red;
+    color: white;
+    font-variant: small-caps;
+    font-weight: bold
+}
