@@ -16,71 +16,20 @@ burger.addEventListener('click', function() {
     }
 })
 
+let flag = false;
 
-
-
-
-
-
-// function diffDiv() {
-//     if (header.className == "") {
-//         let newDiv = document.createElement("div");
-//         newDiv.classList.add("respNav");
-//         headerNav.insertAdjacentElement("afterend", newDiv);
-//         classList.add("resp");
-//     }
-// }
-
-// if ( <= 920) {
-//     // console.log("DUPAAAA");
-
-//     headerNav.removeChild(leftH);
-//     headerNav.removeChild(rightH);
-//     newDiv.appendChild(leftH);
-//     newDiv.appendChild(rightH);
-
-//     header.className.remove();
-
-//     // wyk = true;
-// } else if (window.innerWidth > 920) {
-
-//     newDiv.removeChild(leftH);
-//     newDiv.removeChild(rightH);
-//     headerNav.appendChild(leftH);
-//     headerNav.appendChild(rightH);
-
-//     header.className.add("resp");
+window.addEventListener('beforeunload', function (closingWindow) {
+    if (flag == false) { 
+        closingWindow.preventDefault();
+        closingWindow.returnValue = '';
     
-//     // wyk = false;
-// }
+    
+    
+        var confAlert = "Na pewno chcesz wyjść? Cały postęp zostanie usunięty.";
+        (closingWindow || window).returnValue = confAlert;
+        return confAlert;
 
-// let resp = false;
-
-// window.addEventListener("resize", function width() {
-//     // var ScreenWidth = window.innerWidth;
-//     // console.log(ScreenWidth)
-
-//     if (resp == false && window.innerWidth <= 920) {
-
-//     }
-// })
-
-// let resp = false;
-
-// window.addEventListener("resize", function width() {
-//     if (resp == false && window.innerWidth <= 920) {
-//         headerNav.removeChild(leftH);
-//         headerNav.removeChild(rightH)
-//         newDiv.appendChild(leftH);
-//         newDiv.appendChild(rightH);
-//         resp = true;
-//     }
-//     if (resp == true && window.innerWidth > 920) {
-//         newDiv.removeChild(leftH);
-//         newDiv.removeChild(rightH);
-//         headerNav.appendChild(leftH);
-//         headerNav.appendChild(rightH);
-//         resp = false;
-//     }
-// })
-
+        // nmieskonczonexdxdxdx
+    }
+});
+  

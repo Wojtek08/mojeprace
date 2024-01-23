@@ -13,22 +13,26 @@
     <header>
         <section id="header-section">
             <nav id="headerNav">
-                <i class="fa-solid fa-burger" id="burger"></i>
-                <ul id="left-header-container">
-                    <li><i class="fa-regular fa-circle-question"></i></li>
-                    <li><i class="fa-regular fa-circle-question"></i></li>
-                    <li><i class="fa-regular fa-circle-question"></i></li>
-                </ul>
-                <div id="chapter">
-                    <h1>Chapter 5</h1>
-                    <h1>Próba Lądowania</h1>
-                </div>
-                <ul id="right-header-container">
-                    <li><i class="fa-solid fa-person"></i></li>
-                    <li><i class="fa-solid fa-gas-pump"></i></li>
-                    <li><i class="fa-solid fa-sack-dollar"></i></li>
-                </ul>
-                
+                <section id="chapter-burger">
+                    <i class="fa-solid fa-burger" id="burger"></i>
+                    <div id="chapter">
+                        <h1>Chapter 5</h1>
+                        <h1>Próba Lądowania</h1>
+                    </div>
+                </section>
+
+                <section id="resources">
+                    <ul id="left-header-container">
+                        <li><i class="fa-regular fa-circle-question"></i></li>
+                        <li><i class="fa-regular fa-circle-question"></i></li>
+                        <li><i class="fa-regular fa-circle-question"></i></li>
+                    </ul>
+                    <ul id="right-header-container">
+                        <li><i class="fa-solid fa-person"></i></li>
+                        <li><i class="fa-solid fa-gas-pump"></i></li>
+                        <li><i class="fa-solid fa-sack-dollar"></i></li>
+                    </ul>
+                </section>
             </nav>
         </section>
     </header>
